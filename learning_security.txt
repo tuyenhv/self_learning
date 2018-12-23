@@ -2,3 +2,6 @@ https://lwn.net/Articles/760584/
 https://patchwork.kernel.org/patch/10531149/
 https://www.phoronix.com/scan.php?page=news_item&px=Linux-Kernel-Q-HW-RNGs
 https://patchwork.kernel.org/patch/10531149/
+https://github.com/torvalds/linux/blob/master/arch/x86/kernel/cpu/rdrand.c
+https://tls.mbed.org/ctr-drbg-source-code
+https://csrc.nist.gov/csrc/media/events/random-number-generation-workshop-2004/documents/hashblockcipherdrbg.pdf
