@@ -5,8 +5,13 @@
 - an HMAC (sometimes expanded as either keyed-hash message authentication code or hash-based message authentication code) is a specific type of message authentication code (MAC) involving a cryptographic hash function and a secret cryptographic key.
 
 - https://lwn.net/Articles/760121/
+random: add a config option to trust the CPU's hwrng
+
+- https://lwn.net/Articles/760584/
+Theodore Ts'o posted a patch on July 17 to add a kernel configuration option that would explicitly trust the CPU vendor's hardware RNG (e.g. the RDRAND instruction for x86). Kernels built with RANDOM_TRUST_CPU will immediately initialize the random number pool using the architecture's facility, without waiting for enough entropy to accumulate from other sources; this means that the getrandom() system call will not block. Waiting for systems to gather enough entropy has been a problem in the past, especially for virtual machines and embedded systems where such entropy can be difficult to find.
 
 - https://patchwork.kernel.org/patch/9275207/
+Add crypto/lrng_base.c and crypto/lrng_kcapi.c
 
 folder:
 drivers/char/hw_random
@@ -28,8 +33,10 @@ arch/x86/crypto/aesni-intel_asm.S
 arch/x86/crypto/aesni-intel_avx-x86_64.S
 drivers/crypto/atmel-aes.c
 
-https://lwn.net/Articles/760584/
+
 https://patchwork.kernel.org/patch/10531149/
+random: add a config option to trust the CPU's hwrng
+
 https://www.phoronix.com/scan.php?page=news_item&px=Linux-Kernel-Q-HW-RNGs
 https://patchwork.kernel.org/patch/10531149/
 https://github.com/torvalds/linux/blob/master/arch/x86/kernel/cpu/rdrand.c
